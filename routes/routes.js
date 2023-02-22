@@ -11,6 +11,7 @@ module.exports = (app) => {
 
     const notesData = JSON.parse(data)
 
+    //  API routes
     app.get('/api/notes', function (req, res) {
       res.json(notesData)
     })
@@ -38,6 +39,20 @@ module.exports = (app) => {
       console.log('Deleted note: ' + req.params.id)
     })
 
+    //  Get Route to receive data
+    app.get('/notes', function (req, res) {
+      res.sendFile(path.join(__dirname, '../public/notes.html'))
+    })
+  
+    function updateDb() {
+      fs.writeFile('./db/db.json', JSON.stringify(notes, '\t'), (err) => {
+        if (err) {
+          throw err;
+        }
+  
+        return true
+      })
+    }
     
   })
 }
