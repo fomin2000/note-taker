@@ -33,5 +33,5 @@ https://github.com/fomin2000/note-taker
 https://notes-taker-app.herokuapp.com/
 
 ## Website Image
-![websiteScreenshot]("/public/assets/images/note-taker.png")
+![websiteScreenshot](/public/assets/images/note-taker.png)
 
